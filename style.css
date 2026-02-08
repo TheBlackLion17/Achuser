@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Main box */
+.box {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Button container */
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 120px;
+}
+
+/* Buttons */
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* YES button */
+#yesBtn {
+    background: #00ff9d;
+    color: #003d2b;
+}
+
+/* NO button */
+#noBtn {
+    background: #ff4d4d;
+    color: white;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+/* Message text */
+#message {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: pre-wrap;
+}
+
+/* Photos container */
+.photos {
+    margin-top: 30px;
+    display: none;          /* shown via JS */
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Photo styling */
+.photos img {
+    width: 180px;
+    border-radius: 15px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Staggered animation */
+.photos img:nth-child(1) { animation-delay: 0.3s; }
+.photos img:nth-child(2) { animation-delay: 0.6s; }
+.photos img:nth-child(3) { animation-delay: 0.9s; }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+    .photos img {
+        width: 140px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
